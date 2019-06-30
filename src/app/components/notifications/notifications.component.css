@@ -1,0 +1,25 @@
+p {
+  font-family: Lato;
+}
+
+table {
+  width: 100%;
+}
+
+.header {
+  padding: 5px;
+}
+
+.filter {
+  display: block;
+  top: 20px;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix{
+  padding-bottom: 10px !important;
+}
+.container{
+  margin-left: 60px;
+  margin-right: 60px;
+  padding-top: 80px;
+}

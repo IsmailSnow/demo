@@ -1,0 +1,87 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="isAuthenticated">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+        <mat-toolbar>
+            <span class="title-center">Industrial Deployment Platform</span></mat-toolbar>
+        <mat-nav-list>
+            <span class="line"></span>
+            <a mat-list-item routerLink="dashboard" routerLinkActive="active">
+                <i class="material-icons icon">dashboard</i>
+                <p>Dashboard</p>
+            </a>
+            <a mat-list-item routerLink="profile" routerLinkActive="active">
+                <i class="material-icons icon ">person</i>
+                <p>User Profile</p>
+            </a>
+
+            <a mat-list-item routerLink="notifications" routerLinkActive="active">
+                <i class="material-icons icon">notifications</i>
+                <p>Notifications</p>
+            </a>
+
+            <a mat-list-item routerLink="historique" routerLinkActive="active">
+                <i class="material-icons icon">history</i>
+                <p>Historique</p>
+            </a>
+            <a mat-list-item routerLink="versions" routerLinkActive="active">
+                <i class="material-icons icon">grade</i>
+                <p>Versions</p>
+            </a>
+            <a mat-list-item routerLink="projects" routerLinkActive="active">
+                <i class="material-icons icon">assignment</i>
+                <p>Projects</p>
+            </a>
+            <a mat-list-item routerLink="waiting" routerLinkActive="active">
+                <i class="material-icons icon">calendar_today</i>
+                <p>Wainting Line</p>
+            </a>
+
+        </mat-nav-list>
+        <img class="agirc-logo" src="../../assets/images/agirc-arrco.jpg">
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <span class="item">{{item}}</span>
+        <mat-toolbar class="main-body main-hor-nav">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async" style="padding-right: 160px !important;">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <div class="main-hor-nav">
+                <mat-nav-list class="hor-nav" mat-list-item>
+                    <form>
+                        <mat-form-field class="example-full-width" style="margin-right: 10px;">
+                            <input type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl">
+                        </mat-form-field>
+                    </form>
+                    <a>
+                        <i class="material-icons" style="margin-top: 15px !important;">search</i>
+                    </a>
+                    <a mat-list-item routerLink="dashboard">
+                        <i class="material-icons">dashboard</i>
+                    </a>
+                    <a mat-list-item>
+                        <i class="material-icons" matBadge="15" matBadgeColor="warn">notifications</i>
+                    </a>
+                    <a mat-list-item routerLink="waiting">
+                        <i class="material-icons">calendar_today</i>
+                    </a>
+                    <a mat-list-item [matMenuTriggerFor]="menu">
+                        <i class="material-icons">build</i>
+                    </a>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item routerLink="help">Help</button>
+                        <button mat-menu-item (click)="onLogout()">Logout</button>
+                        <button mat-menu-item>About us</button>
+                    </mat-menu>
+
+                </mat-nav-list>
+            </div>
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <ng-content></ng-content>
+        <div class="footer">
+            <div class="copyright">
+                ©2019, Industrial Deployment Platfrom .
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<app-login *ngIf="!isAuthenticated" (isAuthenticated)="onAuthentication($event)"></app-login>

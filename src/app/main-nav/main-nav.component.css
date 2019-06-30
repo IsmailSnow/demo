@@ -1,0 +1,142 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 260px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+    /* background-image: url('../../assets/images/sidebar-1.jpg'); */
+    background: whitesmoke;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+mat-nav-list {
+    margin-top: 20px !important;
+}
+
+::ng-deep .mat-list-item-content {
+    /* margin-left: 25px !important; */
+    padding-top: 26px !important;
+    font-size: 15px !important;
+    padding-bottom: 20px !important;
+}
+
+.icon {
+    margin-right: 15px !important;
+    font-size: 24px;
+    float: left;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    color: #a9afbb;
+}
+
+.mat-nav-list .mat-list-item {
+    cursor: pointer;
+    outline: 0;
+    font-size: 14px;
+    color: lightslategrey;
+    margin-left: 19px ! important;
+    width: 85% !important;
+    padding-bottom: 13px;
+    border-radius: 5px;
+    height: 40px !important;
+}
+
+.active {
+    background-color: #9c27b0 !important;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(156, 39, 176, .4) !important;
+    color: white !important;
+}
+
+.active i {
+    color: white !important;
+}
+
+.agirc-logo {
+    width: 90%;
+    bottom: 0;
+    position: absolute;
+    bottom: 30px;
+    margin-left: 15px;
+}
+
+::ng-deep .mat-toolbar-single-row {
+    white-space: inherit !important;
+    text-align: -webkit-center !important;
+    font-size: 18px !important;
+    color: #3c4858 !important;
+    line-height: 22px !important;
+}
+
+.line {
+    content: "";
+    position: absolute;
+    right: 15px;
+    height: 1px;
+    width: calc(100% - 30px);
+    background-color: hsla(0, 0%, 71%, .3);
+    top: 63px;
+}
+
+.mat-drawer-container {
+    background-color: #eee !important;
+}
+
+.main-body {
+    background-color: #eee !important;
+}
+
+.hor-nav {
+    display: flex;
+    /* margin-top: 0 !important; */
+    margin-bottom: 30px;
+    /* margin-left: 80%; */
+}
+
+.search {
+    font-size: smaller !important;
+}
+
+.main-hor-nav {
+    justify-content: flex-end !important;
+}
+
+.item {
+    position: relative;
+    color: inherit;
+    height: 50px;
+    font-size: 1.125rem;
+    line-height: 30px;
+    top: 50px;
+    font-weight: 300;
+    margin-left: 1rem;
+}
+
+.footer {
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.copyright {
+    padding-top: 65px;
+}

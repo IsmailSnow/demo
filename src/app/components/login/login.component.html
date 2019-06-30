@@ -1,0 +1,28 @@
+<div class="main-div">
+    <mat-card class="wrap-login">
+        <mat-card-title>Login</mat-card-title>
+        <label>Identifiant</label>
+        <form [formGroup]="formGroup" (ngSubmit)="login(formGroup.value)">
+            <mat-form-field>
+                <mat-icon matPrefix>account_circle</mat-icon>
+                <input type="identifiant" matInput placeholder="Enter Your Identifiant" formControlName="identifiant">
+                <mat-error *ngIf="!formGroup.controls['identifiant'].valid && formGroup.controls['identifiant'].touched">
+                    {{ getErrorIdentifiant() }}
+                </mat-error>
+            </mat-form-field>
+            <label>Password</label>
+            <mat-form-field>
+                <mat-icon matPrefix>lock</mat-icon>
+                <input type="password" matInput placeholder="Enter Your Password" formControlName="password">
+                <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
+                    {{ getErrorPassword() }}
+                </mat-error>
+            </mat-form-field>
+            <mat-checkbox>Remember me!</mat-checkbox>
+            <mat-card-actions align="center">
+                <!-- [disabled]="!formGroup.valid" -->
+                <button class="btn-block" mat-raised-button color="primary" type="submit" [disabled]="!formGroup.valid">Login</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>

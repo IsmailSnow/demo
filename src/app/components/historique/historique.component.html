@@ -1,0 +1,82 @@
+<span class="item">Historique</span>
+<div style="margin-top:30px;" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+
+                <table class="table table-hover" id="dev-table">
+                    <thead>
+                        <tr>
+                            <th>Projet</th>
+                            <th>Livrable</th>
+                            <th>Version</th>
+                            <th>Environnement</th>
+                            <th>Statut</th>
+                            <th>Date de la demande</th>
+                            <th>Date de la réalisation</th>
+                            <th>Id</th>
+                            <th>Dependence</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="pageHistory?.content">
+                        <tr *ngFor="let his of pageHistory.content">
+                            <td>{{his.project}}</td>
+                            <td>{{his.parameter}}</td>
+                            <td>{{his.baseline}}</td>
+                            <td>{{his.env}}</td>
+                            <td>{{his.status}}</td>
+                            <td>{{his.askDateTime}}</td>
+                            <td>{{his.doneDateTime}}</td>
+                            <td>{{his.dependence}}</td>
+                            <td>{{his.id}}</td>
+                            <td>{{his.dependence}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<nav aria-label="...">
+    <ul style="margin-left: 180px;margin-top:-10px;" class="pagination" *ngIf="pageHistory?.content">
+        <li *ngFor="let page of ' '.repeat(pageHistory.totalPages).split(''), let i = index " (click)="onSelect(i)" [class.active]="i === selectedPage" class="page-item"><a class="page-link" href="#">{{i}}</a></li>
+    </ul>
+</nav>
+
+
+<!-- 
+  <div class="example-container mat-elevation-z8">
+    <div>
+    <button mat-raised-button (click)="addColumn()"> Add column </button>
+    <button mat-raised-button (click)="removeColumn()"> Remove column </button>
+   </div>
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="progress">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnsToDisplay;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+   -->
